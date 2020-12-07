@@ -1,0 +1,29 @@
+header{
+display: flex;
+justify-content: center;
+border: 5px solid black;
+margin: 10px;
+}
+
+body {
+  background-image:url("../desktop/images/stonks.jpg");
+}
+.container {
+  display: flex;
+  justify-content:center;
+  text-align: center;
+}
+
+.stock-info{
+  display: inline-block;
+  border: 5px solid black;
+  box-shadow: 0 4px 6px 0 solid black;
+  border-radius: 6px;
+}
+.stock-card {
+display: inline-block;
+box-shadow: 0 4px 6px 0 solid black;
+Border: 5px solid black;
+border-radius: 6px;
+width: 100%;
+}
