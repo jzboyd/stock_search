@@ -3,27 +3,46 @@ display: flex;
 justify-content: center;
 border: 5px solid black;
 margin: 10px;
+font-family: serif;
+color: black;
+background-color: white;
 }
 
-body {
-  background-image:url("../desktop/images/stonks.jpg");
+body{
+  height: 100vh;
+  background-image:url("https://sevensreport.com/wp-content/uploads/2016/07/stock-market-3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
 }
+
 .container {
   display: flex;
   justify-content:center;
   text-align: center;
+  height: fit-content;
+  padding: 5%;
+
 }
 
 .stock-info{
   display: inline-block;
-  border: 5px solid black;
-  box-shadow: 0 4px 6px 0 solid black;
+  border: 5px solid white;
+  box-shadow: 0 4px 6px 0 solid white;
   border-radius: 6px;
+  color: white;
 }
-.stock-card {
+#stockCard {
+font-size: .7em;
+border: solid black;
+background-color: white;
 display: inline-block;
-box-shadow: 0 4px 6px 0 solid black;
-Border: 5px solid black;
+box-shadow: 0 4px 6px 0 solid white;
 border-radius: 6px;
-width: 100%;
+width: 50%;
+flex-basis: auto;
+padding: 10px;
+margin: 5px;
+
+
 }
