@@ -2,32 +2,33 @@
 //GET COMPANY OVERVIEW
 
 $(() => {
-
+// clickable search button
 $('.button').on('click', (event) => {
   event.preventDefault();
   const userInput = $('input[type="text"]').val()
   const container = $('.container')
-
+// ajax call pulling company overview by searching symbol
   $.ajax({
       url: `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${userInput}&apikey=TZ373GA4NIP6ZGMC?datatype=json`,
       type: 'GET',
   }).then(
     (stocks) => {
     console.log(stocks);
-
+//stock overview card
     let stockOverview = $(`
       <div id='stockCard'>
-          <h4>Symbol: ${stocks.Symbol}
-          <h4>${stocks.Name}
-          <h4>${stocks.Exchange}
-          <h4>${stocks.Description}
-          <h4>${stocks.Sector}
-          <h4>${stocks.Industry}
+
+          <h2>Symbol: ${stocks.Symbol}
+          <h3>Company Name: ${stocks.Name}
+          <h2>Exchange: ${stocks.Exchange}
+          <h4>Company Sector: ${stocks.Sector}
+          <h4>Company Industry: ${stocks.Industry}
+          <h4>Company Info: ${stocks.Description}
           </div>
       `).appendTo(container)
 
-  const quoteButton = $('<button id = "quoteButton">STOCK QUOTE</button>').appendTo(stockOverview)
-
+  const quoteButton = $('<button id = "quoteButton">STOCK QUOTE</button>').prependTo(stockOverview)
+// stock quote clickable button
   $('#quoteButton').click((event) => {
     event.preventDefault()
     $.ajax({
@@ -40,16 +41,16 @@ $('.button').on('click', (event) => {
 
         let stockCard = $(`
           <div id='stockCard'>
-              <h4>${stock["Global Quote"]["01. symbol"]}
-              <h4>Open: $ ${stock["Global Quote"]["02. open"]}
-              <h4>${stock["Global Quote"]["03. high"]}
-              <h4>${stock["Global Quote"]["04. low"]}
-              <h4>${stock["Global Quote"]["05. price"]}
-              <h4>${stock["Global Quote"]["06. volume"]}
-              <h4>${stock["Global Quote"]["07. latest trading day"]}
-              <h4>${stock["Global Quote"]["08. previous close"]}
-              <h4>${stock["Global Quote"]["09. change"]}
-              <h4>${stock["Global Quote"]["10. change percent"]}
+              <h4> ${stock["Global Quote"]["01. symbol"]}
+              <h4>Open: $${stock["Global Quote"]["02. open"]}
+              <h4>High: $${stock["Global Quote"]["03. high"]}
+              <h4>Low: $${stock["Global Quote"]["04. low"]}
+              <h4>Price: $${stock["Global Quote"]["05. price"]}
+              <h4>Volume: ${stock["Global Quote"]["06. volume"]}
+              <h4>Latest Trading Day: ${stock["Global Quote"]["07. latest trading day"]}
+              <h4>Previous Close: ${stock["Global Quote"]["08. previous close"]}
+              <h4>Change: ${stock["Global Quote"]["09. change"]}
+              <h4>Change Percent: ${stock["Global Quote"]["10. change percent"]}
           `).prependTo(stockOverview)
 
 
