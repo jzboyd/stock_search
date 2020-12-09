@@ -103,7 +103,6 @@ input {
 
 .container {
   display: flex;
-  flex-wrap: wrap;
   justify-content:center;
   text-align: center;
   height: fit-content;
@@ -119,6 +118,8 @@ input {
 }
 
 #quoteButton{
+  display: inline-block;
+  justify-content: center;
   width: auto;
   height: 3em;
   background-color: black;
@@ -139,6 +140,7 @@ border-radius: 6px;
 width: 50%;
 padding: 10px;
 margin: 5px;
+margin-top: -50px;
 }
 
 #modal {
