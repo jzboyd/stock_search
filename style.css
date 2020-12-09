@@ -1,6 +1,6 @@
 header{
 display: flex;
-border: 5px solid black;
+border: 5px solid white;
 box-shadow: 5px 10px;
 margin: 10px;
 font-family: serif;
@@ -8,18 +8,12 @@ color: black;
 background-color: white;
 border-radius:10px;
 text-align: center;
-font-size: 1.5em;
-border-style: inset;
+font-size: 1.8em;
+border-style: outset;
+background-size: cover;
 }
 
-img{
-  z-index: 1;
-  justify-content: flex-start;
-  height: 5em;
-  border-radius: 5px;
-}
-
-.transition {
+.transition: {
   transform: scale(1);
   animation: size-in 3s 1;
   display: flex;
@@ -35,33 +29,37 @@ h1 {
   margin-right: auto;
 }
 
+h2{
+  display: flex;
+  justify-content: center;
+}
+
 body{
   height: 100vh;
   width: auto;
-  background-image:url("https://sevensreport.com/wp-content/uploads/2016/07/stock-market-3.jpg");
+  background-image: url('https://media2.giphy.com/media/JtBZm3Getg3dqxK0zP/giphy-downsized-large.gif');
+  /* background-image:url("https://sevensreport.com/wp-content/uploads/2016/07/stock-market-3.jpg"); */
   background-size: cover;
-  background-repeat: no-repeat;
   background-color: black;
-
 }
 .navbar{
   display: flex;
   justify-content: center;
   flex-flow: row;
-  background-color: white;
   border-radius:10px;
-  margin-top: .9em;
+  margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
   width: auto;
   height: 3em;
   text-align: center;
   align-items: center;
-  border: 5px solid black;
-  box-shadow: 1px 1px 1px 1px;
+  border: 5px solid white;
+  background-color: white;
+  border-style: outset;
 }
 
-.navbar a{
+.navbar a {
   font-size: 1.2em;
   font-family: serif;
   display: block;
@@ -70,7 +68,9 @@ body{
   padding: 10px;
   flex: auto;
   text-decoration: none;
-  border-style: solid;
+  border-radius: 10px;
+  font-weight: bold;
+  margin: .2em;
 }
 .navbar a:hover{
   background-color: gray;
@@ -78,7 +78,7 @@ body{
 form {
   display: flex;
   justify-content: center;
-  height: 2.4em;
+  height: 2.6em;
   margin: 2em;
 }
 
@@ -91,9 +91,10 @@ input {
 
 #Symbol{
   border: 5px solid white;
-  border-style: ridge;
+  border-style: outset;
   border-radius: 5px;
   margin-left: .3em;
+  font-weight: bold;
 }
 
 #Symbol:hover{
@@ -102,6 +103,7 @@ input {
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   justify-content:center;
   text-align: center;
   height: fit-content;
@@ -124,15 +126,44 @@ input {
   border-radius: 5px;
   color: white;
 }
-#stockCard {
+#quoteButton:hover{
+  color: grey;
+}
+#stockOverview {
+display: inline-block;
 font-size: .7em;
 border: 2px solid black;
 background-color: white;
-display: inline-block;
 box-shadow: 5px 10px;
 border-radius: 6px;
 width: 50%;
-flex-basis: auto;
 padding: 10px;
 margin: 5px;
+}
+
+#modal {
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	overflow: auto;
+}
+
+#modalBox {
+	height: 25em;
+	width: 15em;
+	border-radius: 2px;
+	margin: 150px auto;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  background: white;
+  font-size: 1em;
+  background: white;
+  box-shadow: 5px 10px;
+  border-radius: 6px;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
 }
